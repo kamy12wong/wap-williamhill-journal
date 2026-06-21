@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>威廉希尔 · 产品说明页</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #faf9f7;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: #1f2a3a;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      max-width: 720px;
+      width: 100%;
+    }
+
+    /* 标题层级 – 极简留白 */
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 450;
+      letter-spacing: -0.01em;
+      margin: 0 0 0.5rem 0;
+      color: #0d1b2a;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      color: #6b7b8c;
+      margin-bottom: 2.8rem;
+      border-bottom: 1px solid #e2ddd7;
+      padding-bottom: 1.2rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin: 2.4rem 0 0.8rem 0;
+      color: #1e2a3e;
+      letter-spacing: 0.01em;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 480;
+      margin: 1.6rem 0 0.4rem 0;
+      color: #2c3d54;
+    }
+
+    p {
+      margin: 0 0 1.2rem 0;
+    }
+
+    .intro-card {
+      background-color: #ffffff;
+      border-radius: 18px;
+      padding: 2rem 2.2rem;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.03), 0 4px 18px rgba(0, 0, 0, 0.02);
+      margin-bottom: 2.5rem;
+    }
+
+    .highlight-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 1.8rem;
+      margin: 1.8rem 0 0.6rem 0;
+    }
+
+    .highlight-item {
+      flex: 1 1 180px;
+      padding: 0.75rem 0 0.75rem 1.2rem;
+      border-left: 3px solid #d4cdc2;
+      background: #f8f6f3;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .highlight-item strong {
+      display: block;
+      font-weight: 530;
+      font-size: 1.05rem;
+      margin-bottom: 0.2rem;
+      color: #1f2a3a;
+    }
+
+    .highlight-item span {
+      font-size: 0.92rem;
+      color: #435363;
+    }
+
+    .use-case-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.8rem 0 1.8rem 0;
+    }
+
+    .use-case-list li {
+      padding: 0.55rem 0 0.55rem 1.6rem;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="%234b5a6e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>') left center no-repeat;
+      background-size: 14px;
+      margin-bottom: 0.25rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #eae5de;
+      padding: 1rem 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+      color: #1a2a3b;
+    }
+
+    .faq-a {
+      font-size: 0.94rem;
+      color: #54636f;
+    }
+
+    .disclaimer-note {
+      background: #f3f1ed;
+      border-radius: 14px;
+      padding: 1.4rem 1.8rem;
+      margin: 2.8rem 0 1rem 0;
+      font-size: 0.9rem;
+      color: #495a6b;
+      border-left: 4px solid #b0a89b;
+    }
+
+    .inline-link {
+      color: #1f3a5c;
+      text-decoration: none;
+      border-bottom: 1px solid #b8c7d9;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .inline-link:hover {
+      border-bottom-color: #1f3a5c;
+      color: #0b1b2e;
+    }
+
+    .footer-meta {
+      font-size: 0.8rem;
+      color: #8896a4;
+      margin-top: 2rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid #e0dad2;
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+
+      .intro-card {
+        padding: 1.5rem 1.2rem;
+      }
+
+      .highlight-grid {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <h1>威廉希尔 · 稳定入口说明</h1>
+  <div class="subhead">产品摘要 · 使用引导 · 可信访问</div>
+
+  <!-- 摘要卡片 -->
+  <div class="intro-card">
+    <p style="font-size: 1.1rem; margin-bottom: 1.2rem;">
+      <strong>威廉希尔</strong> 是一个面向日常信息查阅与内容服务的界面入口，经过长期迭代，当前版本在页面结构、响应速度和导航清晰度上均有显著优化。本页从实际使用场景出发，整理了一份克制且完整的介绍，帮助新用户快速了解其特点与合理使用方式。
+    </p>
+    <p>
+      无论你是初次接触还是希望寻找一个稳定的访问路径，这里提供的内容都以真实、可验证的观察为基础，不包含夸大描述。下文将从核心亮点、适用场景、常见疑问和访问提示四个部分展开。
+    </p>
+  </div>
+
+  <!-- 亮点部分 -->
+  <h2>▎ 核心特点</h2>
+  <div class="highlight-grid">
+    <div class="highlight-item">
+      <strong>清晰的信息布局</strong>
+      <span>页面采用宽屏适应设计，模块分区明确，减少无关干扰，便于快速定位内容。</span>
+    </div>
+    <div class="highlight-item">
+      <strong>一致的浏览体验</strong>
+      <span>在移动端与桌面端均保持统一的交互逻辑，无需反复适应不同版式。</span>
+    </div>
+    <div class="highlight-item">
+      <strong>克制的更新节奏</strong>
+      <span>功能调整围绕稳定性展开，不频繁改动核心路径，降低用户的再学习成本。</span>
+    </div>
+  </div>
+
+  <!-- 使用建议 / 场景 -->
+  <h2>▎ 适用场景与建议</h2>
+  <ul class="use-case-list">
+    <li>当你需要一个稳定的内容访问入口，且希望界面保持简洁、不堆砌多余元素时，<a href="https://wap--williamhill.com" class="inline-link">威廉希尔</a> 是一个值得尝试的选择。</li>
+    <li>在日常信息查阅场景中，建议优先使用浏览器直接访问，避免通过非官方渠道或第三方重定向链接进入。</li>
+    <li>如果遇到页面加载异常，可稍后重试或检查本地网络环境——多数情况与入口稳定性无关，而是临时网络波动。</li>
+    <li>对于功能或内容有疑问时，优先参考页面内的说明区域或常见问题整理，比自行搜索更高效可靠。</li>
+  </ul>
+
+  <!-- FAQ 摘要 -->
+  <h2>▎ 常见疑问简答</h2>
+  <div style="background: white; border-radius: 16px; padding: 0.2rem 1.8rem 0.6rem 1.8rem; box-shadow: 0 1px 4px rgba(0,0,0,0.02);">
+    <div class="faq-item">
+      <div class="faq-q">访问时是否需要额外配置？</div>
+      <div class="faq-a">不需要。直接使用主流浏览器（如 Chrome、Safari、Edge 等）打开 <a href="https://wap--williamhill.com" class="inline-link">威廉希尔</a> 即可，无需安装插件或修改系统设置。如果遇到页面无法加载，请先确认网络连接是否正常。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">页面是否适配手机屏幕？</div>
+      <div class="faq-a">是的。该站点针对手机屏幕做了响应式适配，文字与按钮大小在多数机型上均有良好可读性。若显示异常，可尝试刷新页面或更换浏览器。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">如何确保访问的是正确路径？</div>
+      <div class="faq-a">始终使用本页提供的链接或浏览器地址栏直接输入域名。不要轻信搜索引擎结果中来源不明的广告链接或仿冒网址。</div>
+    </div>
+  </div>
+
+  <!-- 可信但克制的访问说明 -->
+  <div class="disclaimer-note">
+    <strong style="display: block; margin-bottom: 0.5rem;">🕊️ 使用提示</strong>
+    本文档仅作为信息介绍与访问引导，不构成任何形式的推荐或承诺。访问 <a href="https://wap--williamhill.com" class="inline-link" style="border-bottom-color: #8f9dad;">威廉希尔</a> 时，请根据自身需求与判断合理使用页面功能。如遇到内容异常或页面行为与描述不符，请立即停止操作并核实来源。我们坚持传递真实、克制、可验证的信息，不鼓励盲目信任或依赖。
+  </div>
+
+  <div class="footer-meta">
+    <span>版本参考 · 2025 年 4 月  · 基于实际页面观察整理</span>
+  </div>
+</div>
+</body>
+</html>
