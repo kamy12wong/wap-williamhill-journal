@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MK体育 · 知识库入口</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f7fa;
+            color: #2c3e50;
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        a {
+            color: #c44536;
+            text-decoration: none;
+            border-bottom: 1px dotted transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        a:hover {
+            border-bottom-color: #c44536;
+            color: #a3332a;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: #1a262f;
+            color: #e6edf3;
+            padding: 64px 0 56px;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        .hero .sub {
+            font-size: 1.05rem;
+            opacity: 0.78;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        .hero .badge {
+            display: inline-block;
+            margin-top: 22px;
+            background: #c44536;
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 4px 16px;
+            border-radius: 20px;
+            letter-spacing: 0.3px;
+        }
+
+        /* 主内容区 浅色 */
+        .main-section {
+            background: #ffffff;
+            padding: 48px 0 40px;
+            flex: 1;
+        }
+
+        /* 目录感布局: 卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 28px;
+            margin-bottom: 48px;
+        }
+        .card {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 24px 20px 28px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            border: 1px solid #e8ecf0;
+            transition: box-shadow 0.2s, transform 0.1s;
+        }
+        .card:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+            transform: translateY(-3px);
+        }
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e2a36;
+            margin-bottom: 10px;
+            letter-spacing: 0.3px;
+        }
+        .card p {
+            font-size: 0.95rem;
+            color: #3e4c5a;
+        }
+        .card .icon-em {
+            font-size: 1.5rem;
+            margin-right: 6px;
+            opacity: 0.7;
+        }
+
+        /* 说明区 & 提示区 */
+        .info-block, .tip-block {
+            background: #f0f4f8;
+            border-left: 4px solid #c44536;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 32px;
+        }
+        .info-block h2, .tip-block h2 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1e2a36;
+        }
+        .info-block p, .tip-block p {
+            color: #2f4050;
+        }
+
+        .related-area {
+            border-top: 1px solid #dce2e8;
+            padding-top: 32px;
+            margin-top: 16px;
+        }
+        .related-area h2 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #1e2a36;
+            margin-bottom: 14px;
+        }
+        .related-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 24px;
+            list-style: none;
+        }
+        .related-list li {
+            font-size: 0.95rem;
+        }
+        .related-list li::before {
+            content: "·";
+            color: #c44536;
+            font-weight: bold;
+            display: inline-block;
+            width: 16px;
+        }
+
+        /* FAQ摘要 */
+        .faq-mini {
+            background: #ffffff;
+            border: 1px solid #e0e6ed;
+            border-radius: 14px;
+            padding: 24px 24px 18px;
+            margin: 40px 0 8px;
+        }
+        .faq-mini details {
+            margin-bottom: 12px;
+            border-bottom: 1px solid #ebeff3;
+            padding-bottom: 10px;
+        }
+        .faq-mini details:last-of-type {
+            border-bottom: none;
+        }
+        .faq-mini summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: #1e2a36;
+            padding: 4px 0;
+        }
+        .faq-mini summary::-webkit-details-marker {
+            color: #c44536;
+        }
+        .faq-mini .answer {
+            margin-top: 8px;
+            font-size: 0.92rem;
+            color: #405162;
+            padding-left: 8px;
+        }
+
+        .footer-note {
+            margin-top: 28px;
+            font-size: 0.85rem;
+            color: #667788;
+            text-align: center;
+            border-top: 1px solid #eef2f6;
+            padding-top: 28px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e0e6ec;
+            margin: 24px 0 32px;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.7rem; }
+            .hero { padding: 44px 0 36px; }
+            .card-grid { gap: 18px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 深色头图 -->
+    <header class="hero">
+        <div class="container">
+            <h1>MK体育 · 知识库入口</h1>
+            <p class="sub">再次访问、收藏站点，持续关注体育领域的信息整理。这里汇集了常用指引与相关说明。</p>
+            <span class="badge">常备入口 · 目录</span>
+        </div>
+    </header>
+
+    <!-- 正文区 -->
+    <main class="main-section">
+        <div class="container">
+
+            <!-- 目录感卡片网格 -->
+            <div class="card-grid">
+                <div class="card">
+                    <span class="icon-em">📋</span>
+                    <h3>站点概览</h3>
+                    <p>熟悉 <a href="https://mksportswap.com">MK体育</a> 的内容组织方式，快速定位常用功能与信息模块。</p>
+                </div>
+                <div class="card">
+                    <span class="icon-em">🔖</span>
+                    <h3>收藏与回访</h3>
+                    <p>将页面加入浏览器书签，或记下关键路径，方便日后再次查阅与使用。</p>
+                </div>
+                <div class="card">
+                    <span class="icon-em">🧭</span>
+                    <h3>持续关注</h3>
+                    <p>了解平台更新动态、栏目调整或新增内容，保持对<a href="https://mksportswap.com">MK体育</a>相关信息的跟进。</p>
+                </div>
+                <div class="card">
+                    <span class="icon-em">📁</span>
+                    <h3>参考索引</h3>
+                    <p>汇总常见术语、分类说明及操作备忘，作为日常查询的轻量知识库。</p>
+                </div>
+            </div>
+
+            <!-- 说明区 -->
+            <div class="info-block">
+                <h2>📌 说明区 · 入口性质</h2>
+                <p>此页面定位为辅助性目录页，不替代主站功能。建议将 <a href="https://mksportswap.com">MK体育</a> 添加至浏览器收藏夹，或记住其域名。所有正式操作、数据查询及服务均以主站实际页面为准。本页仅整理常用指引和背景说明，方便再次访问时快速进入状态。</p>
+            </div>
+
+            <!-- 提示区 -->
+            <div class="tip-block">
+                <h2>💡 提示区 · 回访小建议</h2>
+                <p>如果一段时间未访问，可以留意首页是否出现新的栏目分类或公告。部分内容区域可能会根据运营节奏调整位置。使用浏览器书签或历史记录可以快速返回，也推荐通过直接输入域名的方式保持访问路径的简洁。</p>
+            </div>
+
+            <!-- 相关信息区 -->
+            <div class="related-area">
+                <h2>📎 相关信息</h2>
+                <ul class="related-list">
+                    <li>常见内容分类索引</li>
+                    <li>页面结构说明</li>
+                    <li>更新记录与通知</li>
+                    <li>术语对照参考</li>
+                    <li>使用环境建议</li>
+                </ul>
+            </div>
+
+            <!-- FAQ 摘要 -->
+            <div class="faq-mini">
+                <h2 style="font-size:1.1rem; margin-bottom:16px; color:#1e2a36;">❓ 常见问题摘要</h2>
+                <details>
+                    <summary>如何快速再次找到这个页面？</summary>
+                    <div class="answer">建议将当前页加入浏览器书签，或记住站点名称 <a href="https://mksportswap.com">MK体育</a>，通过搜索引擎或直接访问域名即可返回。</div>
+                </details>
+                <details>
+                    <summary>页面内容和主站是什么关系？</summary>
+                    <div class="answer">本页为辅助性介绍和目录入口，不包含主站全部功能。所有核心服务均需在 <a href="https://mksportswap.com">MK体育</a> 主站内完成。</div>
+                </details>
+                <details>
+                    <summary>信息会定期更新吗？</summary>
+                    <div class="answer">本页仅整理基础说明，具体更新请以主站实际发布内容为准。建议定期直接访问主站获取最新信息。</div>
+                </details>
+            </div>
+
+            <hr>
+            <div class="footer-note">
+                知识库入口 · 仅供说明与指引使用
+            </div>
+        </div>
+    </main>
+</body>
+</html>
